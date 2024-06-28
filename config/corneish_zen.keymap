@@ -42,10 +42,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E         &kp R       &kp T        &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp TAB    &kp A  &kp S  &kp D         &kp F       &kp G        &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C         &kp V       &kp B        &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
-                         &kp LEFT_ALT  &kp LSHIFT  &kp SPACE    &lt 3 ENTER  &to 1  &mo 3
+&kp ESC    &kp Q  &kp W  &kp E         &kp R       &kp T        &kp Y           &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp TAB    &kp A  &kp S  &kp D         &kp F       &kp G        &kp H           &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C         &kp V       &kp B        &kp N           &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
+                         &kp LEFT_ALT  &kp LSHIFT  &kp SPACE    &mt CAPS SPACE  &to 1  &mo 3
             >;
         };
 
@@ -59,15 +59,15 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &to 2   &to 0
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6     &kp N7     &kp N8            &kp N9             &kp N0         &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp GRAVE
+&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans            &trans             &trans         &trans
+                        &trans  &trans  &trans    &trans     &to 2      &to 0
             >;
         };
 
         raise_layer {
-            display-name = "FR,BL,RGB";
+            display-name = "FR n BLUE";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
@@ -76,20 +76,20 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans        &bt BT_SEL 0  &bt BT_DISC 0    &bt BT_SEL 1       &bt BT_DISC 1    &none              &none            &none            &none            &none            &none            &bt BT_CLR_ALL
-&kp F1        &kp F2        &kp F3           &kp F4             &kp F5           &kp F6             &kp F7           &kp F8           &kp F9           &kp F10          &kp F11          &kp F12
-&out OUT_TOG  &none         &rgb_ug RGB_TOG  &ext_power EP_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI    &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD
-                                             &trans             &trans           &trans             &to 0            &none            &to 1
+&trans        &none   &none         &none          &rgb_ug RGB_TOG  &ext_power EP_TOG    &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &none            &bt BT_CLR_ALL
+&out OUT_TOG  &none   &bt BT_SEL 0  &bt BT_DISC 0  &bt BT_SEL 1     &bt BT_DISC 1        &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFF  &none
+&kp F1        &kp F2  &kp F3        &kp F4         &kp F5           &kp F6               &kp F7           &kp F8           &kp F9           &kp F10          &kp F11          &kp F12
+                                    &trans         &trans           &trans               &to 0            &none            &to 1
             >;
         };
 
         layer_3 {
             display-name = "ARROWS";
             bindings = <
-&trans  &trans  &trans  &trans          &trans  &trans    &trans         &trans      &kp UP_ARROW   &trans     &kp PRINTSCREEN    &kp DELETE
-&trans  &trans  &trans  &trans          &trans  &trans    &kp C_AC_HOME  &kp LEFT    &kp DOWN       &kp RIGHT  &kp C_VOLUME_UP    &trans
-&trans  &trans  &trans  &mt CAPSLOCK C  &trans  &trans    &kp END        &kp K_MUTE  &kp RIGHT_ALT  &trans     &kp C_VOLUME_DOWN  &trans
-                        &trans          &trans  &trans    &kp RWIN       &kp F4      &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans         &trans      &kp UP_ARROW   &trans     &kp PRINTSCREEN    &kp DELETE
+&trans  &trans  &trans  &trans  &trans  &trans    &kp C_AC_HOME  &kp LEFT    &kp DOWN       &kp RIGHT  &kp C_VOLUME_UP    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp END        &kp C_MUTE  &kp RIGHT_ALT  &trans     &kp C_VOLUME_DOWN  &trans
+                        &trans  &trans  &trans    &kp RWIN       &kp F4      &trans
             >;
         };
     };
